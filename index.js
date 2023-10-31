@@ -4,10 +4,10 @@ const cors = require("cors");
 const { Pool } = require("pg");
 
 const app = express();
-const port = 5000;
+const port = 5005;
 
 const corsOptions = {
-  origin: "http://localhost:5173", // Allow only this origin
+  origin: "*",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true,
 };
@@ -49,7 +49,7 @@ app.get("/", (req, res) => {
 
       const final_x = speed * t_hit_ground * Math.cos(angle);
 
-      dataPoints.push({ time: t_hit_ground, x: final_x, y: 0 });
+      dataPoints.push({ time: t_hit_ground, x: final_x, y: 25 });
       break;
     }
 
